@@ -2,4 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Setup/create the grow bar */
+.grow-bar {
+  position: relative;
+}
 
+.grow-bar::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  /* background-color: rgb(105, 200, 255); */
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.grow-bar:hover::after,
+.grow-bar:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Bar animation class */
+.grow-bar-animation {
+  overflow: hidden;
+}
+
+.grow-bar-animation::after {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.grow-bar-animation:hover::after {
+  transform: translate3d(0, 0, 0);
+}

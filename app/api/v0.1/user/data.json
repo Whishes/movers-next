@@ -1,0 +1,16 @@
+{
+  "data": [
+    {
+      "user_id": "1",
+      "username": "ned",
+      "email": "ned@email.com",
+      "password": "test"
+    },
+    {
+      "user_id": "2",
+      "username": "ned1",
+      "email": "ned1@email.com",
+      "password": "test1"
+    }
+  ]
+}

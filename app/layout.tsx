@@ -1,6 +1,8 @@
-import NavBar from "./components/NavBar";
+import Provider from "@/components/Provider";
+import NavBar from "../components/nav/NavBar";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+// import { NextAuthProvider } from "../components/NextAuth";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <NavBar />
-        {children}
+        <Provider>
+          <NavBar />
+          {children}
+        </Provider>
       </body>
     </html>
   );

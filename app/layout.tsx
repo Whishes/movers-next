@@ -23,9 +23,6 @@ export default async function RootLayout({
 }) {
   const session = await getCurrentUser();
 
-  console.log("line 9 page.ts", session);
-  console.log("______________________________");
-
   return (
     <html lang="en">
       <body className={poppins.className}>

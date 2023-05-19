@@ -2,13 +2,19 @@
 
 import React from "react";
 import { useState } from "react";
-import { useSession } from "next-auth/react";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
+import { Session } from "next-auth";
 
-const NavBar = () => {
+const NavBar = ({
+  session,
+  status,
+}: {
+  session: Session | null;
+  status: boolean;
+}) => {
   const [navbar, setNavbar] = useState(false);
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
 
   return (
     <header className="flex h-16 justify-between items-center">

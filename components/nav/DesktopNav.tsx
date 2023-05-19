@@ -8,12 +8,12 @@ const DesktopNav = ({
   status,
 }: {
   session: Session | null;
-  status: string | null;
+  status: boolean;
 }) => {
   return (
     <div className="hidden sm:flex">
       <ul className="flex items-center justify-center gap-2">
-        {status === "authenticated" ? (
+        {status ? (
           <>
             <li className="flex justify-center">
               <p>signed in as {session?.user?.name}</p>

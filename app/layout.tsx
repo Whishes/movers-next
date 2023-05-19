@@ -2,6 +2,7 @@ import Provider from "@/components/Provider";
 import NavBar from "../components/nav/NavBar";
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import { getCurrentUser } from "@/lib/session";
 // import { NextAuthProvider } from "../components/NextAuth";
 
 const poppins = Poppins({
@@ -15,16 +16,21 @@ export const metadata = {
   description: "An app to help moving",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await getCurrentUser();
+
+  console.log("line 9 page.ts", session);
+  console.log("______________________________");
+
   return (
     <html lang="en">
       <body className={poppins.className}>
         <Provider>
-          <NavBar />
+          <NavBar session={session} status={session ? true : false} />
           {children}
         </Provider>
       </body>

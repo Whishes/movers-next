@@ -1,8 +1,8 @@
 "use client";
 
-import React, { FormEvent, useEffect, useState } from "react";
-import { getSession, signIn, useSession } from "next-auth/react";
-import { redirect, useSearchParams } from "next/navigation";
+import React, { FormEvent, useState } from "react";
+import { signIn } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 
 const LoginForm = () => {
   const [email, setEmail] = useState<string>("");

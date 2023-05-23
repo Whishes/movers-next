@@ -1,16 +1,23 @@
+"use client";
+
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import Link from "next/link";
-import { Dispatch, SetStateAction } from "react";
+import { Session } from "next-auth";
+import { RxExit } from "react-icons/rx";
+import { signOut } from "next-auth/react";
+import { useState } from "react";
 
 const MobileNav = ({
-  navbar,
-  setNavBar,
+  session,
+  status,
 }: {
-  navbar: boolean;
-  setNavBar: Dispatch<SetStateAction<boolean>>;
+  session: Session | null;
+  status: boolean;
 }) => {
+  const [navbar, setNavbar] = useState(false);
+
   const handleNav = () => {
-    setNavBar(!navbar);
+    setNavbar(!navbar);
   };
 
   return (
@@ -34,16 +41,39 @@ const MobileNav = ({
           </button>
           <div className="">
             <ul className="flex-col w-full ">
-              <Link href="/">
-                <li className="py-4 hover:bg-blue-400 flex justify-center items-center text-2xl">
-                  About
-                </li>
-              </Link>
-              <Link href="/">
-                <li className="py-4 hover:bg-blue-400 flex justify-center items-center text-2xl">
-                  Test
-                </li>
-              </Link>
+              {status ? (
+                <>
+                  <li className="flex justify-center">
+                    <p>signed in as {session?.user?.name}</p>
+                  </li>
+                  <li className="flex justify-center">
+                    <button onClick={() => signOut()}>
+                      <RxExit size={20} />
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link
+                      href="/login"
+                      onClick={handleNav}
+                      className="py-4 hover:bg-blue-400 flex justify-center items-center text-2xl"
+                    >
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/register"
+                      onClick={handleNav}
+                      className="py-4 hover:bg-blue-400 flex justify-center items-center text-2xl"
+                    >
+                      Register
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
@@ -53,3 +83,5 @@ const MobileNav = ({
 };
 
 export default MobileNav;
+
+// py-4 hover:bg-blue-400 flex justify-center items-center text-2xl

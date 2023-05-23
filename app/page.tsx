@@ -1,7 +1,11 @@
-import { authOptions } from "@/lib/auth";
 import { getCurrentUser } from "@/lib/session";
 import { redirect } from "next/navigation";
-import LoginPage from "./(auth)/login/page";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Movers - Home",
+  description: "Homepage",
+};
 
 export default async function Home() {
   const user = await getCurrentUser();

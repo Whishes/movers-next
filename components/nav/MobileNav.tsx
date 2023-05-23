@@ -43,13 +43,8 @@ const MobileNav = ({
             <ul className="flex-col w-full ">
               {status ? (
                 <>
-                  <li className="flex justify-center">
-                    <p>signed in as {session?.user?.name}</p>
-                  </li>
-                  <li className="flex justify-center">
-                    <button onClick={() => signOut()}>
-                      <RxExit size={20} />
-                    </button>
+                  <li className="py-4 hover:bg-blue-400 flex justify-center items-center text-2xl">
+                    <button onClick={() => signOut()}>Sign Out</button>
                   </li>
                 </>
               ) : (

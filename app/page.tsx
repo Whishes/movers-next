@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/lib/session";
 import { redirect } from "next/navigation";
 import { Metadata } from "next";
+import MobileDashboard from "@/components/dashboard/MobileDashboard";
 
 export const metadata: Metadata = {
   title: "Movers - Home",
@@ -8,14 +9,14 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const user = await getCurrentUser();
+  const user = getCurrentUser();
   if (!user) {
     redirect("/login");
   }
 
   return (
-    <main className="flex flex-col items-center justify-between p-24 font-semibold">
-      <h1 className="text-2xl">Main Page</h1>
+    <main className="flex-grow flex">
+      <MobileDashboard />
     </main>
   );
 }

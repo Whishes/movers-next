@@ -25,7 +25,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body
+        className={`${poppins.className} bg-green-400 min-h-screen flex flex-col`}
+      >
         <Provider>
           <NavBar session={session} status={session ? true : false} />
           {children}

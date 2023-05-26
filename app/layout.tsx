@@ -7,7 +7,7 @@ import { getCurrentUser } from "@/lib/session";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   fallback: ["system-ui", "arial"],
 });
 

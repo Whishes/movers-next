@@ -15,8 +15,10 @@ export default function DashboardSelection({
   return (
     <div className="h-16 flex w-full justify-evenly items-center">
       <label
-        className={`cursor-pointer h-full w-full flex items-center justify-center hover:bg-slate-200 rounded-tl-lg ${
-          selection === "tasks" && "border-b-2 border-green-400"
+        className={`cursor-pointer h-full w-full flex items-center justify-center rounded-tl-lg ${
+          selection === "tasks"
+            ? "border-b-2 border-green-400 "
+            : "hover:bg-slate-200"
         }`}
       >
         <input
@@ -30,8 +32,10 @@ export default function DashboardSelection({
         Tasks
       </label>
       <label
-        className={`cursor-pointer h-full w-full flex items-center justify-center hover:bg-slate-200 rounded-tr-lg ${
-          selection === "costs" && "border-b-2 border-green-400"
+        className={`cursor-pointer h-full w-full flex items-center justify-center rounded-tr-lg ${
+          selection === "costs"
+            ? "border-b-2 border-green-400"
+            : "hover:bg-slate-200"
         }`}
       >
         <input

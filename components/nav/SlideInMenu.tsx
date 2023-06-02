@@ -7,7 +7,7 @@ import { RxExit } from "react-icons/rx";
 import { signOut } from "next-auth/react";
 import { useState } from "react";
 
-const MobileNav = ({
+const SlideInMenu = ({
   session,
   status,
 }: {
@@ -77,6 +77,6 @@ const MobileNav = ({
   );
 };
 
-export default MobileNav;
+export default SlideInMenu;
 
 // py-4 hover:bg-blue-400 flex justify-center items-center text-2xl

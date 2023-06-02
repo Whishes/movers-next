@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useState } from "react";
-import MobileNav from "./MobileNav";
+import SlideInMenu from "./SlideInMenu";
 import DesktopNav from "./DesktopNav";
 import { Session } from "next-auth";
 
@@ -22,7 +22,7 @@ const NavBar = ({
         {/* TABLET/DESKTOP STUFF */}
         <DesktopNav session={session} status={status} />
         {/* MOBILE STUFF */}
-        <MobileNav session={session} status={status} />
+        <SlideInMenu session={session} status={status} />
       </nav>
     </header>
   );

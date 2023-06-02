@@ -1,5 +1,5 @@
 import Provider from "@/components/Provider";
-import NavBar from "../components/nav/NavBar";
+import NavBar from "../components/nav";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import { getCurrentUser } from "@/lib/session";
@@ -22,6 +22,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const session = await getCurrentUser();
+  // console.log("Layout: " + session);
 
   return (
     <html lang="en">

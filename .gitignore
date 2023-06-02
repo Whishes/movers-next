@@ -34,3 +34,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#others
+terminal.bat
+/app/api/test/
+/app/api/v0.1/

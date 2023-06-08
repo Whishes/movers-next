@@ -14,9 +14,6 @@ export default async function Home() {
     redirect("/login");
   }
 
-  // detect if on mobile etc
-  // let isMobile = window.matchMedia("(max-width: 600px)").matches;
-
   return (
     <main className="flex-grow flex">
       <MobileDashboard />
